@@ -4,7 +4,7 @@ const app=express()
 const fs=require('fs')
 const path = require('path')
 
-app.use(express.json())
+
 
 const timestamp = Date.now();
 const dateObject = new Date(timestamp);
