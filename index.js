@@ -3,8 +3,9 @@ const app=express()
 
 const fs=require('fs')
 const path = require('path')
+const dotenv=require('dotenv')
 
-
+dotenv.config()
 
 const timestamp = Date.now();
 const dateObject = new Date(timestamp);
@@ -42,7 +43,7 @@ app.get('/readfolder',async(req,res)=>{
     })
 })
 
-app.listen(3000)
+app.listen(process.env.PORT)
 
 
 
