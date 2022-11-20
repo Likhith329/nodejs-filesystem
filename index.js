@@ -1,11 +1,12 @@
 const express=require('express')
 const app=express()
+dotenv.config()
 
 const fs=require('fs')
 const path = require('path')
 const dotenv=require('dotenv')
 
-dotenv.config()
+
 
 const timestamp = Date.now();
 const dateObject = new Date(timestamp);
