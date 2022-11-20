@@ -8,9 +8,6 @@ const app=express()
 const fs=require('fs')
 const path = require('path')
 
-
-
-
 const timestamp = Date.now();
 const dateObject = new Date(timestamp);
 const date = dateObject.getDate();
