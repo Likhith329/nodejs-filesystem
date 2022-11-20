@@ -21,7 +21,7 @@ const min=dateObject.getMinutes();
 const sec=dateObject.getSeconds();
 const content=`Date: ${date}-${month}-${year} Time: ${hour}:${min}:${sec}`
 
-app.get('/createfile',async(req,res)=>{
+app.use('/createfile',async(req,res)=>{
     fs.mkdir(`${process.cwd()}/MyNewFolder`,{recursive:true},()=>{
         console.log("folder is creted")
     })
@@ -32,7 +32,7 @@ app.get('/createfile',async(req,res)=>{
     })
 })
 
-app.get('/readfile',async(req,res)=>{
+app.use('/readfile',async(req,res)=>{
     const pathname=path.join(process.cwd(),'MyNewFolder/current-date-time.txt')
     fs.readFile(pathname,(error,content)=>{
         res.send(content.toString())
@@ -40,7 +40,7 @@ app.get('/readfile',async(req,res)=>{
     })
 })
 
-app.get('/readfolder',async(req,res)=>{
+app.use('/readfolder',async(req,res)=>{
     fs.readdir(`${process.cwd()}/MyNewFolder`,(error,file)=>{
         res.send(file.toString())
         console.log("folder is read")
