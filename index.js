@@ -52,8 +52,13 @@ app.use('/deletefile',async(req,res)=>{
 
 app.use('/readfolder',async(req,res)=>{
     fs.readdir(`${process.cwd()}/MyNewFolder`,(error,file)=>{
-        res.send(file.toString())
-        console.log("Folder is read")
+        if(file!=''){
+            res.send(file.toString())
+            console.log("Folder is read",)
+        }
+        else{
+            res.send('Folder is empty')
+        }
     })
 })
 
