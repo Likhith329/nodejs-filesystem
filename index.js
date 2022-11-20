@@ -1,7 +1,9 @@
 const express=require('express')
-const app=express()
+
 const dotenv=require('dotenv')
 dotenv.config()
+
+const app=express()
 
 const fs=require('fs')
 const path = require('path')
